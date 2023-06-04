@@ -34,24 +34,24 @@
       </div>
       <h3>Form Rekrutasi</h3>
       <p>Isi data di bawah sesuai dengan identitas diri anda dan lowongan yang akan anda pilih</p>
-      <form action="" id="form">
+      <form name="myform" onsubmit="return myValidate(this)">
         <div class="form-group">
           <label for="fullName">
             Fullname<span>*</span>
           </label><br>
-          <input type="text" placeholder="Masukkan nama">
+          <input type="text" placeholder="Masukkan nama" name="fname">
         </div>
         <div class="form-group">
           <label for="email">
             Email<span>*</span>
           </label><br>
-          <input type="text" width="100px" placeholder="Masukkan Email">
+          <input type="text" width="100px" placeholder="Masukkan Email" name="femail">
         </div>
         <div class="form-group">
           <label for="noTelp">
             Nomor Telepon<span>*</span>
           </label><br>
-          <input type="text" width="100px" placeholder="Masukkan No. Telepon">
+          <input type="text" width="100px" placeholder="Masukkan No. Telepon" name="ftelp">
         </div>
         <div class="form-group">
           <label for="lowongan">
@@ -73,10 +73,10 @@
             <option value="">Contoh Posisi #3</option>
           </select>
         </div>
+        <div class="form-btn">
+          <input type="submit" value="Kirim" class="btn-kirim">
+        </div>
       </form>
-      <div class="form-btn">
-        <input type="submit" value="Kirim" class="btn-kirim" onclick="myFunction()">
-      </div>
       <div class="box-medsos">
         <ul>
           <li>
@@ -112,12 +112,18 @@
   </section>
 
 <script>
-  function myFunction() {
-    var x = document.getElementById("form").action;
-    document.getElementById("notification").innerHTML = x;
-    console.log('klik')
-    console.log(x)
-}
+  function myValidate(frm) {
+    let fullname = (frm.fname.value);
+    console.log(fullname)
+
+    let email = (frm.femail.value);
+    console.log(email)
+
+    let noTelp = (frm.ftelp.value);
+    console.log(noTelp)
+    
+    return false;
+  }
 </script>
 </body>
 </html>
